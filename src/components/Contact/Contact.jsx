@@ -52,7 +52,7 @@ function Contact() {
             📌 {t("branches.attaba")} <br /> ☎️ 0223938170
           </p>
           <p>
-            📌 {t("branches.may")} <br /> ☎️ 25242001 - 25242002 - 25242003
+            📌 {t("branches.may")} <br /> ☎️ 25452001 - 25452002 - 25452003
           </p>
         </div>
 
