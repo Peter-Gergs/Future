@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "./home.css";
+import "./Home.css";
 import OffersSlider from "../OffersSlider/OffersSlider";
 import ProductSlider from "../ProductSlider/ProductSlider";
 import CategorySlider from "../CategorySlider/CategorySlider";
