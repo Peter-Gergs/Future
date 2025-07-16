@@ -1,0 +1,24 @@
+{
+  "categories": {
+    "speakers": "Speakers",
+    "monitor_arm": "Monitor Arm",
+    "network": "Network",
+    "content_creation": "Content Creation Accessories",
+    "computer_accessories": "Computer Accessories",
+    "cameras": "Cameras",
+    "mobile_accessories": "Mobile Accessories",
+    "furniture": "Furniture",
+    "pos_service": "P.O.S. Service",
+    "printing_paper": "Printing Paper"
+  },
+  "sections": {
+    "flash_sales": "Flash Sales",
+    "flash_sub": "Today's",
+    "view_all": "View All Products",
+    "categories_title": "Browse By Category",
+    "categories_sub": "Categories",
+    "best_sales": "Best Selling Products",
+    "best_sub": "This Month"
+  },
+  "btn": "View All Products"
+}

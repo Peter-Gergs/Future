@@ -1,0 +1,16 @@
+{
+  "loading": "Loading cart...",
+  "title": "Cart Items",
+  "remove": "remove",
+  "units": "units left",
+  "summary": {
+    "title": "Cart Summary",
+    "subtotal": "Subtotal",
+    "checkout": "Checkout"
+  },
+  "alerts": {
+    "increment_error": "Can't Increase Item Quantity",
+    "default_error": "Something went wrong",
+    "ok": "OK"
+  }
+}

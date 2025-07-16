@@ -1,0 +1,13 @@
+.authentication .container .login button {
+  margin: 0;
+}
+.authentication .container .login .login-footer {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.authentication .container .login .login-footer a{
+    border: none;
+
+}

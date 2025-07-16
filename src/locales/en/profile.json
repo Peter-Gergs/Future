@@ -1,0 +1,18 @@
+{
+  "edit_profile": "Edit Your Profile",
+  "password_change": "Password Changes",
+  "current_password": "Current Password",
+  "new_password": "New Password",
+  "confirm_password": "Confirm New Password",
+  "log_out": "Log out",
+  "cancel": "Cancel",
+  "save_changes": "Save Changes",
+  "my_orders": "My Orders",
+  "no_orders": "No orders found.",
+  "status": "Status",
+  "total": "Total",
+  "manage_account": "Manage My Account",
+  "my_profile": "My Profile",
+  "EGP": "EGP",
+  "order":"order"
+}

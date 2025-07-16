@@ -1,0 +1,30 @@
+.not-found {
+  text-align: center;
+  padding: 80px 0;
+}
+
+.not-found h2 {
+  font-size: 6em;
+  font-weight: 500;
+  margin: 40px 0;
+  letter-spacing: 3px;
+}
+
+.not-found a {
+  margin: 90px auto;
+  display: block;
+  border: none;
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 18px 45px;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: 0.3s opacity;
+  -webkit-transition: 0.3s opacity;
+  -moz-transition: 0.3s opacity;
+  -ms-transition: 0.3s opacity;
+  -o-transition: 0.3s opacity;
+  cursor: pointer;
+  text-decoration: none;
+  width: fit-content;
+}

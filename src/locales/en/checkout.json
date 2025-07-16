@@ -1,0 +1,16 @@
+{
+  "name": "Name",
+  "phone": "Phone Number",
+  "governorate": "Governorate",
+  "city": "City",
+  "street": "Street",
+  "building_number": "Building Number",
+  "floor_number": "Floor Number",
+  "apartment_number": "Apartment Number",
+  "landmark": "Landmark",
+  "subtotal": "Subtotal",
+  "shipping": "Shipping",
+  "total": "Total",
+  "place_order": "Place Order",
+  "loading": "Cart Items loading..."
+}

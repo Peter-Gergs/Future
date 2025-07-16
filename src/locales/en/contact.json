@@ -1,0 +1,18 @@
+{
+  "success": "Message Sent Successfully",
+  "error": "Try Again Later",
+  "ok": "OK",
+  "branches": {
+    "title": "Our Branches:",
+    "bustan": "El Bustan Branch 18 Youssef El Gendy St., El Bustan Mall, Ground Floor\n",
+    "attaba": "El Attaba Branch 3 El Marjan St., El Attaba Square, behind Radio Talaat\n",
+    "may": "15th of May Branch 15th of May City, Industrial Zone, Plot No. 2, Block 1, Area 3\n"
+  },
+  "form": {
+    "name": "Your Name",
+    "email": "Your Email",
+    "phone": "Your Phone",
+    "message": "Your Message",
+    "send": "Send Message"
+  }
+}

@@ -1,0 +1,308 @@
+header {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 999;
+  box-shadow: 0px 0px 20px 10px #ddd;
+}
+
+header .container nav {
+  display: flex;
+  align-items: center;
+  gap: 5%;
+  justify-content: space-between;
+}
+@media (min-width: 1200px) {
+  header .container nav {
+    gap: 8%;
+  }
+}
+header .container .logo {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  user-select: none;
+}
+header .container .logo svg {
+  font-size: 2.5em;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  cursor: pointer;
+}
+header .container .logo svg:hover {
+  color: var(--main-color);
+}
+
+header .container ul {
+  display: flex;
+  gap: 20px;
+  user-select: none;
+}
+@media (min-width: 768px) {
+  header .container .logo svg {
+    display: none;
+  }
+  header .container ul {
+    gap: 40px;
+  }
+}
+@media (min-width: 992px) {
+  header .container > .search {
+    display: none;
+  }
+}
+header .container ul li {
+  padding: 10px 0;
+  cursor: pointer;
+  position: relative;
+  transition: 0.3s ease;
+  -webkit-transition: 0.3s ease;
+  -moz-transition: 0.3s ease;
+  -ms-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+@media (min-width: 768px) {
+  header .container ul li {
+    padding: 15px 0;
+  }
+}
+header .container ul a {
+  text-decoration: none;
+  color: inherit;
+}
+header .container ul li::after {
+  content: "";
+  height: 2px;
+  width: 0%;
+  position: absolute;
+  background-color: var(--main-color);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: width 0.4s ease;
+  -webkit-transition: width 0.4s ease;
+  -moz-transition: width 0.4s ease;
+  -ms-transition: width 0.4s ease;
+  -o-transition: width 0.4s ease;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+}
+
+header .container ul li.active,
+header .container ul li:hover {
+  color: #fff;
+  background-color: var(--main-color);
+}
+
+@media (min-width: 768px) {
+  header .container ul li.active::after,
+  header .container ul li:hover::after {
+    width: 100%;
+  }
+
+  header .container ul li.active,
+  header .container ul li:hover {
+    color: var(--main-color);
+    background-color: #fff;
+  }
+}
+header .container .icons {
+  display: flex;
+  align-items: center;
+  font-size: 2em;
+  gap: 10px;
+}
+
+header .container input {
+  border: none;
+}
+header .container input:focus {
+  outline: none;
+}
+
+@media (max-width: 991px) {
+  header .container nav .icons {
+    gap: 30px;
+  }
+  header .container .icons form {
+    display: none;
+  }
+}
+
+header .container .icons {
+  display: flex;
+  align-items: center;
+  font-size: 2em;
+  gap: 10px;
+}
+header .container .icons > .search {
+  min-width: 250px;
+}
+@media (min-width: 992px) {
+  header .container .icons > .search {
+    flex: 1;
+  }
+  header .container .icons {
+    flex: 0.9;
+    justify-content: flex-end;
+  }
+}
+header .container .search {
+  position: relative;
+}
+header .container .search svg {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+header .container .search input {
+  width: 100%;
+  padding: 15px 45px 15px 15px;
+  border-radius: 5px;
+  background-color: #f5f5f5;
+  border: 1px solid #eee;
+}
+
+header .container .wish-list {
+  position: relative;
+}
+header .container .cart-icon {
+  cursor: pointer;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+header .container .cart-icon:hover {
+  color: var(--main-color);
+}
+header .container .cart-icon a {
+  all: unset;
+  display: flex;
+}
+header .container .lang-switch {
+}
+header .container .lang-switch button {
+  color: var(--main-color);
+  background-color: #fff;
+  border: none;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  padding: 4px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+header .container .lang-switch button:hover {
+  background-color: rgba(250, 2, 1, 0.15);
+}
+header .container .icons div {
+  display: flex;
+}
+header .container .wish-list svg:nth-of-type(2) {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  transform: scale(0);
+  -webkit-transform: scale(0);
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  color: var(--main-color);
+}
+header .container > .search {
+  margin-top: 20px;
+}
+
+header .nav-links {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+
+/* أيقونة الموبايل */
+header .menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+header .nav-links svg {
+  display: none;
+}
+/* الموبايل: نخفي القائمة ونظهرها مع كلاس open */
+@media (max-width: 767px) {
+  header .nav-links {
+    position: absolute;
+    top: 0;
+    height: 100vh;
+    left: -100%;
+    width: 50%;
+    background-color: white;
+    flex-direction: column;
+    padding: 45px 40px 16px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 99;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    box-shadow: 0 0 20px 4px #797979;
+  }
+  header .nav-links.open {
+    left: 0;
+    text-align: center;
+  }
+  header .nav-links.open svg {
+    display: block;
+    position: absolute;
+    top: 16px;
+    right: 10px;
+    font-size: 26px;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+    cursor: pointer;
+  }
+  header .nav-links.open svg:hover {
+    color: var(--main-color);
+  }
+
+  header .menu-icon {
+    display: block;
+  }
+}

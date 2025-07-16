@@ -1,0 +1,9 @@
+{
+  "inStock": "In Stock",
+  "outOfStock": "Out of Stock",
+  "unitsLeft": "{{count}} Units left",
+  "buyNow": "Buy Now",
+  "delivery": "Cairo and Giza Delivery",
+  "returnDelivery": " 14 Days Delivery Returns",
+  "EGP": "EGP"
+}

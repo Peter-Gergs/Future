@@ -1,0 +1,110 @@
+.authentication .container .image {
+  display: none;
+}
+
+.authentication .container .image img {
+  max-width: 100%;
+}
+
+.authentication .container form {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1200px) {
+  .authentication .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+  .authentication .container .image {
+    display: block;
+  }
+  .authentication .container form {
+    padding: 30px 80px 30px 50px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .authentication .container form {
+    padding: 30px 80px;
+  }
+}
+.authentication .container form h2 {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 2em;
+}
+
+.authentication .container form div:first-of-type {
+  margin-bottom: 40px;
+}
+
+.authentication .container form div.name {
+  display: flex;
+  gap: 10px;
+}
+.authentication .container form div.name input{
+  flex: 1;
+}
+
+.authentication .container form input {
+  border: none;
+  border-bottom: 1.3px solid #aaa;
+  margin-top: 30px;
+  outline: none;
+  font-size: 18px;
+  padding: 10px;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+}
+.authentication .container form input:focus {
+  border-bottom-color: var(--main-color);
+}
+
+.authentication .container form button {
+  border: none;
+  margin-top: 50px;
+  font-size: 18px;
+  padding: 15px;
+  color: #fff;
+  background-color: var(--main-color);
+  border-radius: 8px;
+  transition: 0.3s;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+  cursor: pointer;
+}
+.authentication .container form button:hover {
+  opacity: 0.6;
+}
+.authentication .container form .login-footer {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.authentication .container form .login-footer span {
+  font-size: 18px;
+}
+
+.authentication .container form .login-footer a {
+  text-decoration: none;
+  color: #444;
+  font-size: 16px;
+  transition: 0.3s;
+  border-bottom: 1px solid #333;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  -ms-transition: 0.3s;
+  -o-transition: 0.3s;
+}
+.authentication .container form .login-footer a:hover {
+  color: var(--main-color);
+  border-color: var(--main-color);
+}

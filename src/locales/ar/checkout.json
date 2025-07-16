@@ -1,0 +1,16 @@
+{
+  "name": "الاسم",
+  "phone": "رقم الهاتف",
+  "governorate": "المحافظة",
+  "city": "المدينة",
+  "street": "الشارع",
+  "building_number": "رقم المبنى",
+  "floor_number": "رقم الدور",
+  "apartment_number": "رقم الشقة",
+  "landmark": "علامة مميزة",
+  "subtotal": "الإجمالي الفرعي",
+  "shipping": "الشحن",
+  "total": "الإجمالي الكلي",
+  "place_order": "إتمام الطلب",
+  "loading": "جارٍ تحميل محتويات السلة..."
+}

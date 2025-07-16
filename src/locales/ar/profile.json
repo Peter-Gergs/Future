@@ -1,0 +1,18 @@
+{
+  "edit_profile": "تعديل الملف الشخصي",
+  "password_change": "تغيير كلمة المرور",
+  "current_password": "كلمة المرور الحالية",
+  "new_password": "كلمة المرور الجديدة",
+  "confirm_password": "تأكيد كلمة المرور الجديدة",
+  "log_out": "تسجيل الخروج",
+  "cancel": "إلغاء",
+  "save_changes": "حفظ التغييرات",
+  "my_orders": "طلباتي",
+  "no_orders": "لا توجد طلبات.",
+  "status": "الحالة",
+  "total": "الإجمالي",
+  "manage_account": "إدارة الحساب",
+  "my_profile": "ملفي الشخصي",
+  "EGP": "جنيه",
+  "order": "طلب"
+}

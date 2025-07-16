@@ -1,0 +1,24 @@
+{
+  "categories": {
+    "speakers": "مكبرات الصوت",
+    "monitor_arm": "حامل شاشات",
+    "network": "الشبكات",
+    "content_creation": "إكسسوارات صناعة المحتوى",
+    "computer_accessories": "إكسسوارات الكمبيوتر",
+    "cameras": "كاميرات",
+    "mobile_accessories": "إكسسوارات الموبايل",
+    "furniture": "أثاث",
+    "pos_service": "إكسسوارات الكاشير",
+    "printing_paper": "ورق الطباعة"
+  },
+  "sections": {
+    "flash_sales": "تخفيض مؤقت",
+    "flash_sub": "عروض اليوم",
+    "view_all": "عرض كل المنتجات",
+    "categories_title": "تصفح حسب الفئة",
+    "categories_sub": "الفئات",
+    "best_sales": "الأكثر مبيعًا",
+    "best_sub": "هذا الشهر"
+  },
+  "btn": "عرض كل المنتجات"
+}

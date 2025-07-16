@@ -1,0 +1,62 @@
+section.checkout .container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+}
+section.checkout .container form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+section.checkout .container form input {
+  border: none;
+  outline: none;
+  background-color: #f1f1f1;
+  padding: 16px;
+}
+section.checkout .container .sub-total {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+section.checkout .container .sub-total .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+section.checkout .container .sub-total .item h3 {
+  flex: 1;
+  font-weight: 500;
+}
+section.checkout .container .sub-total .item img {
+  width: 72px;
+}
+section.checkout .container .sub-total .total-price .subtotal-price,
+section.checkout .container .sub-total .total-price .shipping-price {
+  border-bottom: 1px solid #bbb;
+
+}
+section.checkout .container .sub-total .total-price .subtotal-price,
+section.checkout .container .sub-total .total-price .shipping-price,
+section.checkout .container .sub-total .total-price .total {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 0;
+}
+
+
+section.checkout .container .sub-total input {
+  border: none;
+  outline: none;
+  background-color: var(--main-color);
+  padding: 16px;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  cursor: pointer;
+}

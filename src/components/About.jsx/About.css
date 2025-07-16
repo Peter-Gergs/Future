@@ -1,0 +1,43 @@
+.about-section {
+  padding: 2rem 1rem;
+  background-color: #fff;
+  font-family: "Cairo", sans-serif;
+  color: #333;
+}
+
+.about-section .about-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.about-section .about-label {
+  background-color: red;
+  width: 6px;
+  height: 40px;
+  border-radius: 2px;
+}
+.about-section ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px 20px;
+  margin: 30px 0;
+}
+
+.about-section .about-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.about-section .about-content {
+  padding: 0 1rem;
+  line-height: 1.8;
+  font-size: 1rem;
+}
+
+.about-content p {
+  margin-bottom: 1rem;
+}
