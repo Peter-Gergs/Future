@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import "./header.css";
+import "./Header.css";
 import { IoIosHeartEmpty } from "react-icons/io";
 import { BsCart3 } from "react-icons/bs";
 import { IoMdHeart } from "react-icons/io";
