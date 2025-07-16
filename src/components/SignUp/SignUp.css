@@ -43,8 +43,14 @@
 .authentication .container form div.name {
   display: flex;
   gap: 10px;
+  flex-direction: column;
 }
-.authentication .container form div.name input{
+@media (min-width: 768px) {
+  .authentication .container form div.name {
+    flex-direction: row;
+  }
+}
+.authentication .container form div.name input {
   flex: 1;
 }
 

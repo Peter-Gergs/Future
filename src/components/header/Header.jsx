@@ -6,7 +6,7 @@ import { IoMdHeart } from "react-icons/io";
 import { HiBars3 } from "react-icons/hi2";
 import SearchBox from "../../modules/SerachBox";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo.png";
+import logo from "../../assets/icon.png";
 import { useAuth } from "../../context/AuthContext";
 import { useTranslation } from "react-i18next";
 import { FaTimes } from "react-icons/fa";
