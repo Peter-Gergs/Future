@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./contact.css";
+import "./Contact.css";
 import withReactContent from "sweetalert2-react-content";
 import API_URL from "../../config";
 import Swal from "sweetalert2";
