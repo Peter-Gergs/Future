@@ -1,5 +1,4 @@
 import React, { useRef, useState } from "react";
-// import "./Search.css";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";

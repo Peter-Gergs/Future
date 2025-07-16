@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import "./notfound.css";
+import "./Notfound.css";
 
 function NotFound() {
   const { t } = useTranslation("notfound");
