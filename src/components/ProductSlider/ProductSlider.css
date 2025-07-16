@@ -21,8 +21,13 @@ html[lang="ar"] .items-section .sub-word::before {
 .items-section .title {
   font-weight: 600;
   margin: 30px 0;
-  font-size: 32px;
+  font-size: 24px;
   letter-spacing: 1px;
+}
+@media (min-width: 992px) {
+  .items-section .title {
+    font-size: 32px;
+  }
 }
 .items-section .swiper {
   border-radius: 10px;

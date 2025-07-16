@@ -198,8 +198,6 @@ header .container .cart-icon a {
   all: unset;
   display: flex;
 }
-header .container .lang-switch {
-}
 header .container .lang-switch button {
   color: var(--main-color);
   background-color: #fff;
@@ -246,12 +244,6 @@ header .container > .search {
   margin-top: 20px;
 }
 
-header .nav-links {
-  display: flex;
-  gap: 1rem;
-  list-style: none;
-}
-
 /* أيقونة الموبايل */
 header .menu-icon {
   display: none;
@@ -264,11 +256,11 @@ header .nav-links svg {
 /* الموبايل: نخفي القائمة ونظهرها مع كلاس open */
 @media (max-width: 767px) {
   header .nav-links {
-    position: absolute;
+    position: fixed;
     top: 0;
     height: 100vh;
     left: -100%;
-    width: 50%;
+    width: 60%;
     background-color: white;
     flex-direction: column;
     padding: 45px 40px 16px 0;

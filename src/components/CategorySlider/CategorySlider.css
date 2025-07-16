@@ -24,13 +24,16 @@
   font-size: 5em;
 }
 
-
 .category-slider .category span {
   text-align: center;
-  font-size: 1.2em;
 }
- 
-.category-slider .category:hover{
+@media (min-width: 768px) {
+  .category-slider .category span {
+    font-size: 1.2em;
+  }
+}
+
+.category-slider .category:hover {
   color: #fff;
   background-color: var(--main-color);
   border-color: var(--main-color);
