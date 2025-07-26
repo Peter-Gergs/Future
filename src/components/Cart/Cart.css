@@ -242,7 +242,7 @@ section.cart {
 .cart .container .checkout .btn {
   border-top: 1px solid #eee;
 }
-.cart .container .checkout .btn a {
+.cart .container .checkout .btn button {
   text-decoration: none;
   color: #fff;
   background-color: var(--main-color);
@@ -261,7 +261,9 @@ section.cart {
   -moz-transition: 0.3s;
   -ms-transition: 0.3s;
   -o-transition: 0.3s;
+  border: none;
+  width: 100%;
 }
-.cart .container .checkout .btn a:hover {
+.cart .container .checkout .btn button:hover {
   background-color: rgba(201, 13, 13, 0.685);
 }
