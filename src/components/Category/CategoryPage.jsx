@@ -11,6 +11,7 @@ import axios from "axios";
 import Checkbox from "../../modules/CheckBox";
 import { FaMinus, FaPlus } from "react-icons/fa";
 import { useTranslation } from "react-i18next";
+import i18n from "../../i18n";
 function CategoryPage() {
   const { t } = useTranslation("product");
   const categoryName = useParams();
@@ -52,8 +53,12 @@ function CategoryPage() {
           max_price: maxPrice,
           brand: selectedBrands.join(","),
         },
+        headers: {
+          "Accept-Language": i18n.language,
+        },
       })
       .then((res) => {
+        console.log(res);
         setItems(res.data.results);
       });
   };
@@ -72,6 +77,9 @@ function CategoryPage() {
           min_price: minPrice,
           max_price: maxPrice,
         },
+        headers: {
+          "Accept-Language": i18n.language,
+        },
       })
       .then((res) => {
         setItems(res.data.results);
@@ -83,6 +91,9 @@ function CategoryPage() {
       .get(`${API_URL}/api/products`, {
         params: {
           category: categoryName.categorySlug,
+        },
+        headers: {
+          "Accept-Language": i18n.language,
         },
       })
       .then((res) => {
