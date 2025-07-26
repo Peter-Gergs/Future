@@ -22,13 +22,13 @@ function Header() {
   };
 
   useEffect(() => {
-    const LinksElement = [...links.current.children];
-    LinksElement.slice(1).forEach((ele) => {
+    const LinksElement = [...links.current.children].slice(1);
+    LinksElement.forEach((ele) => {
       ele = ele.querySelector("li");
       ele.onclick = function () {
-        LinksElement.forEach((e) =>
-          e.querySelector("li").classList.remove("active")
-        );
+        LinksElement.forEach((e) => {
+          e.querySelector("li").classList.remove("active");
+        });
         ele.classList.add("active");
       };
     });
