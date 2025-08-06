@@ -41,10 +41,10 @@ function Home() {
             <Link to="/category/network/">
               <li>{t("categories.network")}</li>
             </Link>
-            <Link to="/category/content creation accessories/">
+            <Link to="/category/content-creation-accessories/">
               <li>{t("categories.content_creation")}</li>
             </Link>
-            <Link to="/category/computer accessories/">
+            <Link to="/category/computer-accessories/">
               <li>{t("categories.computer_accessories")}</li>
             </Link>
             <Link to="/category/cameras/">
