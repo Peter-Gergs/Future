@@ -66,12 +66,12 @@ function CategorySlider({ sub, title }) {
         spaceBetween={35}
         grabCursor={true}
         breakpoints={{
-          0: { slidesPerView: 2 },
-          768: { slidesPerView: 3 },
-          992: { slidesPerView: 4 },
-          1200: { slidesPerView: 5 },
-          1400: { slidesPerView: 6 },
-          1600: { slidesPerView: 7 },
+          0: { slidesPerView: 2.5 },
+          768: { slidesPerView: 3.5 },
+          992: { slidesPerView: 4.5 },
+          1200: { slidesPerView: 5.5 },
+          1400: { slidesPerView: 6.5 },
+          1600: { slidesPerView: 7.5 },
         }}
         modules={[Autoplay]}
         autoplay={{
