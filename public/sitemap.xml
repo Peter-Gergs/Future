@@ -1,27 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://future-vesta.com/</loc>
+    <loc>https://www.future-vesta.com/</loc>
+    <lastmod>2025-08-09</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://future-vesta.com/category/speakers</loc>
+    <loc>https://www.future-vesta.com/category/speakers</loc>  
+    <lastmod>2025-08-09</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://future-vesta.com/signup</loc>
+    <loc>https://www.future-vesta.com/signup</loc>  
+    <lastmod>2025-08-09</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://future-vesta.com/login</loc>
+    <loc>https://www.future-vesta.com/login</loc>  
+    <lastmod>2025-08-09</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://future-vesta.com/contact</loc>
+    <loc>https://www.future-vesta.com/contact</loc>  
+    <lastmod>2025-08-09</lastmod>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://future-vesta.com/about</loc>
+    <loc>https://www.future-vesta.com/about</loc>  
+    <lastmod>2025-08-09</lastmod>
     <priority>0.6</priority>
   </url>
 </urlset>
