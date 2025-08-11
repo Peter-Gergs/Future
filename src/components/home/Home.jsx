@@ -12,8 +12,13 @@ import API_URL from "../../config";
 function Home() {
   const [salesProducts, setSalesProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [categories, setCategories] = useState([]);
+
   const { t } = useTranslation("home");
   useEffect(() => {
+    axios
+      .get(`${API_URL}/api/categories`)
+      .then((res) => setCategories(res.data));
     axios
       .get(`${API_URL}/api/sales/`, {
         headers: { "Accept-Language": i18n.language },
@@ -32,36 +37,12 @@ function Home() {
       <section className="hero-section">
         <div className="container">
           <ul className="categories">
-            <Link to="/category/speakers/">
-              <li>{t("categories.speakers")}</li>
-            </Link>
-            <Link to="/category/monitor arm/">
-              <li>{t("categories.monitor_arm")}</li>
-            </Link>
-            <Link to="/category/network/">
-              <li>{t("categories.network")}</li>
-            </Link>
-            <Link to="/category/content-creation-accessories/">
-              <li>{t("categories.content_creation")}</li>
-            </Link>
-            <Link to="/category/computer-accessories/">
-              <li>{t("categories.computer_accessories")}</li>
-            </Link>
-            <Link to="/category/cameras/">
-              <li>{t("categories.cameras")}</li>
-            </Link>
-            <Link to="/category/mobile accessories/">
-              <li>{t("categories.mobile_accessories")}</li>
-            </Link>
-            <Link to="/category/furniture/">
-              <li>{t("categories.furniture")}</li>
-            </Link>
-            <Link to="/category/P.O.S. Service/">
-              <li>{t("categories.pos_service")}</li>
-            </Link>
-            <Link to="/category/printing paper/">
-              <li>{t("categories.printing_paper")}</li>
-            </Link>
+            {categories.map((cat) => (
+              <Link to={`/category/${cat.slug}`}>
+                <li>{cat[`name_${i18n.language}`]}</li>
+              </Link>
+            ))}
+            
           </ul>
           <OffersSlider />
         </div>
@@ -80,6 +61,7 @@ function Home() {
       <section className="items-section category-slider">
         <div className="container">
           <CategorySlider
+            categories={categories}
             sub={t("sections.categories_sub")}
             title={t("sections.categories_title")}
           />
