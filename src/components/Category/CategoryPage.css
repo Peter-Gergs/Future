@@ -297,3 +297,26 @@ html[lang="ar"] .category-section aside .collapse-toggle {
   padding-left: 10px;
   text-decoration: line-through;
 }
+.category-section .page-btns {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.category-section .page-btns button {
+  font-size: 18px;
+  border: none;
+  background-color: var(--main-color);
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  cursor: pointer;
+}
+.category-section .page-btns button:disabled {
+  background-color: #bbb;
+}

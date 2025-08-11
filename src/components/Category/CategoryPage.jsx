@@ -1,7 +1,12 @@
 import React, { useRef, useState } from "react";
 import "./CategoryPage.css";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
-import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
+import {
+  Link,
+  useNavigate,
+  useParams,
+  useSearchParams,
+} from "react-router-dom";
 import { useEffect } from "react";
 import { SyncLoader } from "react-spinners";
 import axiosInstance from "../../api/axiosInstance";
@@ -27,6 +32,7 @@ function CategoryPage() {
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const [searchParams, setSearchParams] = useSearchParams();
+  const [totalPages, setTotalPages] = useState(1);
   const page = parseInt(searchParams.get("page") || "1", 10);
   const handleAddToCart = (product) => {
     axiosInstance
@@ -88,6 +94,10 @@ function CategoryPage() {
         setLoading(false);
       });
   };
+  const goToPage = (newPage) => {
+    searchParams.set("page", newPage);
+    setSearchParams(searchParams);
+  };
   useEffect(() => {
     axios
       .get(`${API_URL}/api/products`, {
@@ -101,6 +111,8 @@ function CategoryPage() {
       })
       .then((res) => {
         console.log(res);
+        const count = res.data.count;
+        setTotalPages(Math.ceil(count / 24));
         setItems(res.data.results);
         setLoading(false);
       });
@@ -113,7 +125,7 @@ function CategoryPage() {
       .then((res) => {
         setBrands(res.data);
       });
-  }, [categoryName.categorySlug]);
+  }, [categoryName.categorySlug, page]);
   if (loading) {
     return (
       <>
@@ -184,48 +196,63 @@ function CategoryPage() {
             </div>
           </div>
         </aside>
-        <div className="items-container">
-          {items.map((product, i) => (
-            <Link key={i} to={`/product/${product.slug}`}>
-              <div className="slider-item">
-                <div className="image">
-                  {product.discount ? (
-                    <span className="discount">
-                      {product.discount
-                        ? `${Math.round(
-                            ((product.discount / product.price) * 100).toFixed(
-                              1
-                            )
-                          )}%`
-                        : ""}
+        <div className="items">
+          <div className="items-container">
+            {items.map((product, i) => (
+              <Link key={i} to={`/product/${product.slug}`}>
+                <div className="slider-item">
+                  <div className="image">
+                    {product.discount ? (
+                      <span className="discount">
+                        {product.discount
+                          ? `${Math.round(
+                              (
+                                (product.discount / product.price) *
+                                100
+                              ).toFixed(1)
+                            )}%`
+                          : ""}
+                      </span>
+                    ) : (
+                      ""
+                    )}
+                    <img src={`${product.images[0].image}`} />
+                    <span className="icon">
+                      <MdOutlineRemoveRedEye />
                     </span>
+                    <button
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        handleAddToCart(product);
+                      }}
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                  <h3 className="item-title">{product.name}</h3>
+                  <span className="price">{product.final_price}EGP</span>
+                  {product.discount ? (
+                    <span className="old-price">{product.price}EGP</span>
                   ) : (
                     ""
                   )}
-                  <img src={`${product.images[0].image}`} />
-                  <span className="icon">
-                    <MdOutlineRemoveRedEye />
-                  </span>
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      e.preventDefault();
-                      handleAddToCart(product);
-                    }}
-                  >
-                    Add to Cart
-                  </button>
                 </div>
-                <h3 className="item-title">{product.name}</h3>
-                <span className="price">{product.final_price}EGP</span>
-                {product.discount ? (
-                  <span className="old-price">{product.price}EGP</span>
-                ) : (
-                  ""
-                )}
-              </div>
-            </Link>
-          ))}
+              </Link>
+            ))}
+          </div>
+          <div className="page-btns">
+            <button disabled={page <= 1} onClick={() => goToPage(page - 1)}>
+              Prev
+            </button>
+            <span>Page {page}</span>
+            <button
+              disabled={page >= totalPages}
+              onClick={() => goToPage(page + 1)}
+            >
+              Next
+            </button>
+          </div>
         </div>
       </div>
     </section>
