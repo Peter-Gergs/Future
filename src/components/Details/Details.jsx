@@ -128,7 +128,7 @@ const ProductDetails = () => {
                 <span>{quantity}</span>
                 <button onClick={increaseQuantity}>+</button>
               </div>
-              <button className="buy-button">{t("buyNow")}</button>
+              <button className="buy-button">{t("add_to_cart")}</button>
             </div>
 
             <div className="delivery-info">

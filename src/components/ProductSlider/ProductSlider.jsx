@@ -100,7 +100,7 @@ function ProductSlider({ sub, title, products, loading }) {
                       handleAddToCart(product);
                     }}
                   >
-                    Add to Cart
+                    {t("add_to_cart")}
                   </button>
                 </div>
                 <h3 className="item-title">{product.name}</h3>
