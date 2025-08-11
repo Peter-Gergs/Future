@@ -6,7 +6,7 @@ import SwiperCore from "swiper";
 import "swiper/css";
 import "swiper/css/thumbs";
 import "./Details.css";
-import axios from "../../api/axiosInstance";
+
 import API_URL from "../../config";
 import { useParams } from "react-router-dom";
 import { PiWarningCircle } from "react-icons/pi";
@@ -14,6 +14,7 @@ import { useTranslation } from "react-i18next";
 import { PiTruck } from "react-icons/pi";
 import { IoReturnDownBack } from "react-icons/io5";
 import i18n from "../../i18n";
+import axios from "axios";
 
 const ProductDetails = () => {
   SwiperCore.use([Thumbs]);

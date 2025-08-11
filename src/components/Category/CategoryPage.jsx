@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import "./CategoryPage.css";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
 import { SyncLoader } from "react-spinners";
 import axiosInstance from "../../api/axiosInstance";
@@ -26,6 +26,8 @@ function CategoryPage() {
   const pricesFields = useRef(null);
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
+  const [searchParams, setSearchParams] = useSearchParams();
+  const page = parseInt(searchParams.get("page") || "1", 10);
   const handleAddToCart = (product) => {
     axiosInstance
       .post(`/api/cart/add/`, {
@@ -91,12 +93,14 @@ function CategoryPage() {
       .get(`${API_URL}/api/products`, {
         params: {
           category: categoryName.categorySlug,
+          page: page,
         },
         headers: {
           "Accept-Language": i18n.language,
         },
       })
       .then((res) => {
+        console.log(res);
         setItems(res.data.results);
         setLoading(false);
       });

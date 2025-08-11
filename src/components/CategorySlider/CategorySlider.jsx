@@ -12,8 +12,6 @@ import { MdScreenshotMonitor } from "react-icons/md";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import CategoryItem from "../../modules/CategoryItem";
 import i18n from "../../i18n";
-import { useTranslation } from "react-i18next";
-import axios from "axios";
 import API_URL from "../../config";
 
 function CategorySlider({ sub, title, categories }) {
