@@ -17,6 +17,7 @@ function AboutSection() {
           <p>{t("activity")}</p>
           <p>{t("manufacturing")}</p>
           <p>{t("brands")}</p>
+          <p>{t("brands-dis")}</p>
           <ul>
             {t("brand_list", { returnObjects: true }).map((brand, index) => (
               <li key={index}>{brand}</li>
