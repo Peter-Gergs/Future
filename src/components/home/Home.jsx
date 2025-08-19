@@ -42,12 +42,14 @@ function Home() {
                 <li>{cat[`name_${i18n.language}`]}</li>
               </Link>
             ))}
-            
           </ul>
           <OffersSlider />
         </div>
       </section>
-      <section className="items-section flash-sales">
+      <section
+        className="items-section flash-sales"
+        dir={i18n.language === "ar" ? "rtl" : "ltr"}
+      >
         <div className="container">
           <ProductSlider
             sub={t("sections.flash_sub")}
@@ -67,7 +69,10 @@ function Home() {
           />
         </div>
       </section>
-      <section className="items-section best-sales">
+      <section
+        className="items-section best-sales"
+        dir={i18n.language === "ar" ? "rtl" : "ltr"}
+      >
         <div className="container">
           <ProductSlider
             sub={t("sections.best_sub")}

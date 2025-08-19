@@ -66,7 +66,6 @@ function CategoryPage() {
         },
       })
       .then((res) => {
-        console.log(res);
         setItems(res.data.results);
       });
   };

@@ -22,6 +22,7 @@ import SearchPage from "./components/Search/Search";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import About from "./components/About.jsx/About";
+import SEO from "./SEO";
 
 function App() {
   const { i18n } = useTranslation();
@@ -35,29 +36,32 @@ function App() {
   }, []);
   return (
     <AuthProvider>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/forget" element={<Forget />} />
-          <Route path="/verify" element={<Verify />} />
-          <Route path="/setPassword" element={<NewPassword />} />
-          <Route path="/product/:slug" element={<ProductDetails />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/category/:categorySlug" element={<CategoryPage />} />
-          <Route path="/search" element={<SearchPage />} />
-          <Route path="/search/:keyword" element={<SearchPage />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
-        <ToastContainer />
-      </BrowserRouter>
+      <HelmetProvider>
+        <SEO />
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/forget" element={<Forget />} />
+            <Route path="/verify" element={<Verify />} />
+            <Route path="/setPassword" element={<NewPassword />} />
+            <Route path="/product/:slug" element={<ProductDetails />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/category/:categorySlug" element={<CategoryPage />} />
+            <Route path="/search" element={<SearchPage />} />
+            <Route path="/search/:keyword" element={<SearchPage />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+          <Footer />
+          <ToastContainer />
+        </BrowserRouter>
+      </HelmetProvider>
     </AuthProvider>
   );
 }
