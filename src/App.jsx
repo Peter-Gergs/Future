@@ -22,8 +22,6 @@ import SearchPage from "./components/Search/Search";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import About from "./components/About.jsx/About";
-import SEO from "./SEO";
-import { Helmet, HelmetProvider } from "react-helmet-async";
 
 function App() {
   const { i18n } = useTranslation();
@@ -37,8 +35,6 @@ function App() {
   }, []);
   return (
     <AuthProvider>
-      <HelmetProvider>
-        <SEO />
         <BrowserRouter>
           <Header />
           <Routes>
@@ -62,7 +58,6 @@ function App() {
           <Footer />
           <ToastContainer />
         </BrowserRouter>
-      </HelmetProvider>
     </AuthProvider>
   );
 }
