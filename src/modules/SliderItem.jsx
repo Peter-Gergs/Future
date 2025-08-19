@@ -13,7 +13,7 @@ function SliderItem({ item }) {
           <h2> {t("discountMessage", { percentage })}</h2>
         </div>
         <div className="image">
-          <img src={item.images[0].image} alt="" />
+          <img src={item.images[0].image} alt={item.name} loading="lazy" />
         </div>
       </div>
     </Link>

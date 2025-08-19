@@ -1,4 +1,4 @@
-import React, {  } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -89,7 +89,7 @@ function ProductSlider({ sub, title, products, loading }) {
                   ) : (
                     ""
                   )}
-                  <img src={`${product.images[0].image}`} />
+                  <img src={`${product.images[0].image}`} loading="lazy" />
                   <span className="icon">
                     <MdOutlineRemoveRedEye />
                   </span>

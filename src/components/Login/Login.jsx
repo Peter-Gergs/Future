@@ -56,7 +56,7 @@ function SignUp() {
     <section className="authentication">
       <div className="container">
         <div className="image">
-          <img src={signPhoto} alt="Sign in Cart" />
+          <img src={signPhoto} alt="Sign in Cart" loading="lazy" />
         </div>
         <form className="login" onSubmit={handleSubmit}>
           <h2>{t("login_title")}</h2>

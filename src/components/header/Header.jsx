@@ -48,7 +48,7 @@ function Header() {
             <HiBars3 onClick={toggleMenu} className="menu-icon" />{" "}
             {/* ⬅️ 3. ربط الدالة */}
             <Link to={"/"}>
-              <img src={logo} alt="logo" />
+              <img src={logo} alt="logo" loading="lazy" />
             </Link>
           </div>
           <ul

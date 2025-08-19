@@ -35,14 +35,16 @@ function CartProduct({ item, onIncrement, onDecrement, onRemove, remove,units })
     <div className="cart-item">
       <Link>
         <div className="image">
-          <img src={`${API_URL}${item.product.images[0].image}`} />
+          <img
+            src={`${API_URL}${item.product.images[0].image}`}
+            loading="lazy"
+          />
         </div>
         <div className="name">
           <h3>{item.product.name}</h3>
           {item.product.stock < 10 ? (
             <p>
-              <PiWarningCircle /> {item.product.stock}{" "}
-              {units}
+              <PiWarningCircle /> {item.product.stock} {units}
             </p>
           ) : null}
         </div>

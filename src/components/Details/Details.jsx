@@ -70,7 +70,11 @@ const ProductDetails = () => {
             >
               {images.map((image, idx) => (
                 <SwiperSlide key={idx}>
-                  <img src={`${image.image}`} alt={`Thumbnail ${idx}`} />
+                  <img
+                    src={`${image.image}`}
+                    alt={`Thumbnail ${idx}`}
+                    loading="lazy"
+                  />
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -90,7 +94,11 @@ const ProductDetails = () => {
             >
               {images.map((image, idx) => (
                 <SwiperSlide key={idx}>
-                  <img src={`${image.image}`} alt={`Main ${idx}`} />
+                  <img
+                    src={`${image.image}`}
+                    alt={`Main ${idx}`}
+                    loading="lazy"
+                  />
                 </SwiperSlide>
               ))}
             </Swiper>
