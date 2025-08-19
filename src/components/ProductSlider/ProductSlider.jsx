@@ -89,7 +89,11 @@ function ProductSlider({ sub, title, products, loading }) {
                   ) : (
                     ""
                   )}
-                  <img src={`${product.images[0].image}`} loading="lazy" />
+                  <img
+                    src={`${product.images[0].image}`}
+                    loading="lazy"
+                    alt={product.slug}
+                  />
                   <span className="icon">
                     <MdOutlineRemoveRedEye />
                   </span>
