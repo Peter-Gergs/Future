@@ -39,7 +39,7 @@ function OffersSlider() {
       key={swiperKey}
       modules={[Navigation, Pagination, A11y, Autoplay]}
       autoplay={{
-        delay: 30000,
+        delay: 7000,
         disableOnInteraction: false,
       }}
       dir={i18n.language === "ar" ? "rtl" : "ltr"}
