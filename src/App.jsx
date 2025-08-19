@@ -23,6 +23,7 @@ import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import About from "./components/About.jsx/About";
 import SEO from "./SEO";
+import { Helmet, HelmetProvider } from "react-helmet-async";
 
 function App() {
   const { i18n } = useTranslation();
