@@ -1,3 +1,6 @@
+.hero-section .swiper a {
+  text-decoration: none;
+}
 .hero-section .item {
   display: flex;
   flex-direction: column;
