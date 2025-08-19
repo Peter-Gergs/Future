@@ -11,12 +11,25 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import SliderItem from "../../modules/SliderItem";
 import i18n from "../../i18n";
+import axios from "axios";
+import API_URL from "../../config";
 
 function OffersSlider() {
   const [swiperKey, setSwiperKey] = useState(0);
-
+  const [items, setItems] = useState([]);
   useEffect(() => {
-    // كل مرة اللغة تتغير → غير key السوايبر
+    axios
+      .get(`${API_URL}/api/sales/swiper/`, {
+        headers: {
+          "Accept-Language": i18n.language,
+        },
+      })
+      .then((res) => {
+        setItems(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
     setSwiperKey((prev) => prev + 1);
   }, [i18n.language]);
 
@@ -26,7 +39,7 @@ function OffersSlider() {
       key={swiperKey}
       modules={[Navigation, Pagination, A11y, Autoplay]}
       autoplay={{
-        delay: 5000,
+        delay: 30000,
         disableOnInteraction: false,
       }}
       dir={i18n.language === "ar" ? "rtl" : "ltr"}
@@ -36,18 +49,11 @@ function OffersSlider() {
       style={{ width: "100%" }}
       grabCursor={true}
     >
-      <SwiperSlide>
-        <SliderItem title={"Iphone 16 Pro"} offer={"Up to 10% off Voucher"} />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SliderItem title={"Iphone 16 Pro"} offer={"Up to 10% off Voucher"} />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SliderItem title={"Iphone 16 Pro"} offer={"Up to 10% off Voucher"} />
-      </SwiperSlide>
-      <SwiperSlide>
-        <SliderItem title={"Iphone 16 Pro"} offer={"Up to 10% off Voucher"} />
-      </SwiperSlide>
+      {items.map((item) => (
+        <SwiperSlide>
+          <SliderItem item={item} />
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 }

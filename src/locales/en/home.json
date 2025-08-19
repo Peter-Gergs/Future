@@ -20,5 +20,6 @@
     "best_sales": "Best Selling Products",
     "best_sub": "This Month"
   },
-  "btn": "View All Products"
+  "btn": "View All Products",
+  "discountMessage": "Up to {{percentage}}% discount"
 }
