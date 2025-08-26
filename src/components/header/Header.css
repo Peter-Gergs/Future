@@ -62,7 +62,7 @@ header .container ul {
     display: none;
   }
 }
-header .container ul li {
+header .container ul a {
   padding: 10px 0;
   cursor: pointer;
   position: relative;
@@ -86,7 +86,7 @@ header .container ul a {
   text-decoration: none;
   color: inherit;
 }
-header .container ul li::after {
+header .container ul a::after {
   content: "";
   height: 2px;
   width: 0%;
@@ -106,20 +106,20 @@ header .container ul li::after {
   -o-transform: translateX(-50%);
 }
 
-header .container ul li.active,
-header .container ul li:hover {
+header .container ul a.active,
+header .container ul a:hover {
   color: #fff;
   background-color: var(--main-color);
 }
 
 @media (min-width: 768px) {
-  header .container ul li.active::after,
-  header .container ul li:hover::after {
+  header .container ul a.active::after,
+  header .container ul a:hover::after {
     width: 100%;
   }
 
-  header .container ul li.active,
-  header .container ul li:hover {
+  header .container ul a.active,
+  header .container ul a:hover {
     color: var(--main-color);
     background-color: #fff;
   }

@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Header.css";
-import { IoIosHeartEmpty } from "react-icons/io";
 import { BsCart3 } from "react-icons/bs";
 import { IoMdHeart } from "react-icons/io";
 import { HiBars3 } from "react-icons/hi2";
 import SearchBox from "../../modules/SerachBox";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import logo from "../../assets/icon.png";
 import { useAuth } from "../../context/AuthContext";
 import { useTranslation } from "react-i18next";
@@ -21,18 +20,7 @@ function Header() {
     setIsMenuOpen((prev) => !prev); // ⬅️ 2. تبديل الحالة
   };
 
-  useEffect(() => {
-    const LinksElement = [...links.current.children].slice(1);
-    LinksElement.forEach((ele) => {
-      ele = ele.querySelector("li");
-      ele.onclick = function () {
-        LinksElement.forEach((e) => {
-          e.querySelector("li").classList.remove("active");
-        });
-        ele.classList.add("active");
-      };
-    });
-  }, [loggedIn]);
+  useEffect(() => {}, [loggedIn]);
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
@@ -56,23 +44,23 @@ function Header() {
             className={isMenuOpen ? "nav-links open" : "nav-links"} // ⬅️ 4. تغيير الكلاس
           >
             <FaTimes onClick={() => setIsMenuOpen(false)} />
-            <Link to="/">
-              <li className="active">{t("home")}</li>
-            </Link>
-            <Link to="/contact">
+            <NavLink to="/">
+              <li>{t("home")}</li>
+            </NavLink>
+            <NavLink to="/contact">
               <li>{t("contact")}</li>
-            </Link>
-            <Link to="/about">
+            </NavLink>
+            <NavLink to="/about">
               <li>{t("about")}</li>
-            </Link>
+            </NavLink>
             {loggedIn ? (
-              <Link to="/profile">
+              <NavLink to="/profile">
                 <li>{t("profile")}</li>
-              </Link>
+              </NavLink>
             ) : (
-              <Link to="/signup">
+              <NavLink to="/signup">
                 <li>{t("signup")}</li>
-              </Link>
+              </NavLink>
             )}
           </ul>
 
