@@ -4,12 +4,6 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import { Autoplay } from "swiper/modules";
 import "./CategorySlider.css";
-import { CiSpeaker, CiMicrophoneOn, CiRouter, CiMobile3 } from "react-icons/ci";
-import { TbCashRegister } from "react-icons/tb";
-import { FaComputer } from "react-icons/fa6";
-import { GiCctvCamera, GiOfficeChair } from "react-icons/gi";
-import { MdScreenshotMonitor } from "react-icons/md";
-import { IoDocumentTextOutline } from "react-icons/io5";
 import CategoryItem from "../../modules/CategoryItem";
 import i18n from "../../i18n";
 import API_URL from "../../config";
@@ -19,54 +13,7 @@ function CategorySlider({ sub, title, categories }) {
   useEffect(() => {
     setSwiperKey((prev) => prev + 1);
   }, [i18n.language]);
-  // const categories = [
-  //   { key: "Speakers", transKey: "speakers", icon: <CiSpeaker /> },
-  //   {
-  //     key: "Monitor Arm",
-  //     transKey: "monitor_arm",
-  //     icon: <MdScreenshotMonitor />,
-  //   },
-  //   { key: "Network", transKey: "network", icon: <CiRouter /> },
-  //   {
-  //     key: "Content Creation Accessories",
-  //     transKey: "content_creation",
-  //     icon: <CiMicrophoneOn />,
-  //   },
-  //   {
-  //     key: "Computer Accessories",
-  //     transKey: "computer_accessories",
-  //     icon: <FaComputer />,
-  //   },
-  //   { key: "Cameras", transKey: "cameras", icon: <GiCctvCamera /> },
-  //   {
-  //     key: "Mobile Accessories",
-  //     transKey: "mobile_accessories",
-  //     icon: <CiMobile3 />,
-  //   },
-  //   { key: "Furniture", transKey: "furniture", icon: <GiOfficeChair /> },
-  //   {
-  //     key: "P.O.S. Service",
-  //     transKey: "pos_service",
-  //     icon: <TbCashRegister />,
-  //   },
-  //   {
-  //     key: "Printing Paper",
-  //     transKey: "printing_paper",
-  //     icon: <IoDocumentTextOutline />,
-  //   },
-  // ];
-  const iconMap = {
-    CiSpeaker: <CiSpeaker />,
-    MdScreenshotMonitor: <MdScreenshotMonitor />,
-    CiRouter: <CiRouter />,
-    CiMicrophoneOn: <CiMicrophoneOn />,
-    FaComputer: <FaComputer />,
-    GiCctvCamera: <GiCctvCamera />,
-    CiMobile3: <CiMobile3 />,
-    GiOfficeChair: <GiOfficeChair />,
-    TbCashRegister: <TbCashRegister />,
-    IoDocumentTextOutline: <IoDocumentTextOutline />,
-  };
+
   return (
     <>
       <div className="sub-word">{sub}</div>
@@ -94,7 +41,7 @@ function CategorySlider({ sub, title, categories }) {
           <SwiperSlide key={cat.key}>
             <CategoryItem
               name={cat[`name_${i18n.language}`]}
-              icon={iconMap[cat.icon]}
+              icon={cat.image}
               link={`/category/${cat.slug}`}
             />
           </SwiperSlide>

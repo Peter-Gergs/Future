@@ -5,7 +5,7 @@ function CategoryItem({ name, icon, link }) {
   return (
     <Link to={link}>
       <div className="category">
-        {icon}
+        <image src={icon} alt="name" />
         <span>{name}</span>
       </div>
     </Link>

@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Header.css";
 import { BsCart3 } from "react-icons/bs";
-import { IoMdHeart } from "react-icons/io";
 import { HiBars3 } from "react-icons/hi2";
 import SearchBox from "../../modules/SerachBox";
 import { Link, NavLink } from "react-router-dom";
@@ -12,16 +11,13 @@ import { FaTimes } from "react-icons/fa";
 
 function Header() {
   const links = useRef(null);
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // ⬅️ 1. حالة القائمة
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { loggedIn } = useAuth();
   const { t, i18n } = useTranslation("header");
-
   const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev); // ⬅️ 2. تبديل الحالة
+    setIsMenuOpen((prev) => !prev); 
   };
-
   useEffect(() => {}, [loggedIn]);
-
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
     document.documentElement.lang = i18n.language;
