@@ -52,7 +52,7 @@ function CategoryPage() {
         }
       });
   };
-  const handleFilterByPrice = () => {
+  const handleFilterByPrice = () => {0
     axios
       .get(`${API_URL}/api/products`, {
         params: {

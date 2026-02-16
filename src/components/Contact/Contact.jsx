@@ -44,6 +44,10 @@ function Contact() {
     <section className="contact">
       <div className="container">
         <div className="info">
+          <p>
+            📌 {t("hotline")} <br /> ☎️ 01202327232
+          </p>
+
           <h4>🛒 {t("branches.title")}</h4>
           <p>
             📌 {t("branches.bustan")} <br /> ☎️ 0223909935
