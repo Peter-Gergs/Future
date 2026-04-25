@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Checkout.css";
 import axios from "../../api/axiosInstance";
 import API_URL from "../../config";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { PropagateLoader } from "react-spinners";
 import { useTranslation } from "react-i18next";
 import Swal from "sweetalert2";

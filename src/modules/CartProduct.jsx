@@ -10,7 +10,6 @@ function CartProduct({ item, onIncrement, onDecrement, onRemove, remove,units })
   const [loadingPlus, setLoadingPlus] = useState(false);
   const [loadingMinus, setLoadingMinus] = useState(false);
   const [loadingRemove, setLoadingRemove] = useState(false);
-  console.log(item);
   const product = item.product;
   const discount =
     product.discount && product.price
@@ -33,7 +32,7 @@ function CartProduct({ item, onIncrement, onDecrement, onRemove, remove,units })
   };
   return (
     <div className="cart-item">
-      <Link>
+      <Link to={`/product/${product.slug}`}>
         <div className="image">
           <img
             src={`${API_URL}${item.product.images[0].image}`}

@@ -15,6 +15,8 @@ import { PiTruck } from "react-icons/pi";
 import { IoReturnDownBack } from "react-icons/io5";
 import i18n from "../../i18n";
 import axios from "axios";
+import axiosInstance from "../../api/axiosInstance";
+import { toast } from "react-toastify";
 
 const ProductDetails = () => {
   SwiperCore.use([Thumbs]);
@@ -26,6 +28,20 @@ const ProductDetails = () => {
   const [images, setImages] = useState([]);
   const { slug } = useParams();
   const [thumbDirection, setThumbDirection] = useState("vertical");
+
+  const handleAddToCart = (product) => {
+    axiosInstance
+      .post(`${API_URL}/api/cart/add/`, {
+        quantity: 1,
+        variant_id: product.variants.find((v) => v.stock > 0)?.id,
+      })
+      .then(() => {
+        toast.info(t("item_added"));
+      })
+      .catch(() => {
+        toast.error(t("out_of_stock"));
+      });
+  };
 
   useEffect(() => {
     axios
@@ -48,7 +64,7 @@ const ProductDetails = () => {
     updateDirection(); // تشغيله عند التحميل
     window.addEventListener("resize", updateDirection);
     return () => window.removeEventListener("resize", updateDirection);
-  }, [slug,i18n.language]);
+  }, [slug, i18n.language]);
 
   const increaseQuantity = () => setQuantity((prev) => prev + 1);
   const decreaseQuantity = () => {
@@ -136,7 +152,16 @@ const ProductDetails = () => {
                 <span>{quantity}</span>
                 <button onClick={increaseQuantity}>+</button>
               </div>
-              <button className="buy-button">{t("add_to_cart")}</button>
+              <button
+                className="buy-button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  e.preventDefault();
+                  handleAddToCart(product);
+                }}
+              >
+                {t("add_to_cart")}
+              </button>{" "}
             </div>
 
             <div className="delivery-info">
