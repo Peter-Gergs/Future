@@ -71,15 +71,7 @@ function Cart() {
   };
 
   const handleProceedToCheckout = () => {
-    axios
-      .post("api/pending/create/")
-      .then((res) => {
-        const pendingOrderId = res.data.pending_order_id;
-        navigate("/checkout", { state: { pendingOrderId } });
-      })
-      .catch((err) => {
-        console.error("Error creating pending order:", err);
-      });
+    navigate("/checkout");
   };
 
   if (loading) return <p>{t("loading")}</p>;

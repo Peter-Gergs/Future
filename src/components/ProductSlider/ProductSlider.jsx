@@ -18,7 +18,7 @@ function ProductSlider({ sub, title, products, loading }) {
     axios
       .post(`${API_URL}/api/cart/add/`, {
         quantity: 1,
-        product_id: product.id,
+        variant_id: product.variants.find((v) => v.stock > 0).id,
       })
       .then(() => {
         toast.info(t("item_added"));
@@ -81,8 +81,8 @@ function ProductSlider({ sub, title, products, loading }) {
                       {product.discount
                         ? `${Math.round(
                             ((product.discount / product.price) * 100).toFixed(
-                              1
-                            )
+                              1,
+                            ),
                           )}%`
                         : ""}
                     </span>

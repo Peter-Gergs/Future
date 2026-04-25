@@ -5,6 +5,8 @@ import API_URL from "../../config";
 import { useNavigate, useLocation } from "react-router-dom";
 import { PropagateLoader } from "react-spinners";
 import { useTranslation } from "react-i18next";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 function Checkout() {
   const [cartItems, setCartItems] = useState([]);
@@ -24,36 +26,55 @@ function Checkout() {
 
   const formRef = useRef();
   const navigate = useNavigate();
-  const location = useLocation();
   const { t } = useTranslation("checkout");
 
-  const pendingOrderId = location.state?.pendingOrderId;
 
   const handlePlaceOrder = () => {
-    console.log(pendingOrderId);
-    if (!pendingOrderId) return;
-
     setOrderLoading(true);
-
     axios
-      .post(`${API_URL}/api/pending/update-address/`, {
-        ...address,
-        pending_order_id: pendingOrderId,
-      })
-      .then(() => {
-        return axios.post(`${API_URL}/api/payment/pay/`, {
-          pending_order_id: pendingOrderId,
-        });
+      .post(`${API_URL}/api/payment/pay/`, {
+        ...address, 
       })
       .then((res) => {
-        window.location.href = res.data.payment_url;
+        console.log(res.data);
+        if (res.data.redirect_url) {
+          window.location.href = res.data.redirect_url;
+        }
       })
       .catch((err) => {
         console.error("Checkout Error:", err);
-        console.log("Server Response:", err.response?.data);
-      })
-      .finally(() => setOrderLoading(false));
+        console.log("🔥 Server Response:", err.response?.data);
+        const MySwal = withReactContent(Swal);
+
+        if (err.response?.data?.error || err.response?.data?.message) {
+          MySwal.fire({
+            title: "خطأ في الدفع عبر OPay ❌",
+            html: `
+        <p><strong>الرسالة:</strong> ${
+          err.response.data.message || "غير محددة"
+        }</p>
+        <p><strong>الكود:</strong> ${
+          err.response.data.error || "لا يوجد كود"
+        }</p>
+      `,
+            icon: "error",
+            confirmButtonText: "فهمت",
+          }).then(() => {
+            setOrderLoading(false);
+          });
+        } else {
+          MySwal.fire({
+            title: "حدث خطأ في الطلب ❌",
+            text: "تعذر إتمام عملية الدفع. برجاء المحاولة لاحقاً.",
+            icon: "error",
+            confirmButtonText: "حسناً",
+          }).then(() => {
+            setOrderLoading(false);
+          });
+        }
+      });
   };
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
