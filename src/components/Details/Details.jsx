@@ -33,7 +33,7 @@ const ProductDetails = () => {
     axiosInstance
       .post(`${API_URL}/api/cart/add/`, {
         quantity: 1,
-        variant_id: product.variants.find((v) => v.stock > 0)?.id,
+        variant_id: product.id,
       })
       .then(() => {
         toast.info(t("item_added"));
