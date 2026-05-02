@@ -2,6 +2,7 @@ section.checkout .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10%;
+  align-items: start;
 }
 section.checkout .container form {
   display: flex;
@@ -35,7 +36,6 @@ section.checkout .container .sub-total .item img {
 section.checkout .container .sub-total .total-price .subtotal-price,
 section.checkout .container .sub-total .total-price .shipping-price {
   border-bottom: 1px solid #bbb;
-
 }
 section.checkout .container .sub-total .total-price .subtotal-price,
 section.checkout .container .sub-total .total-price .shipping-price,
@@ -44,7 +44,6 @@ section.checkout .container .sub-total .total-price .total {
   justify-content: space-between;
   padding: 15px 0;
 }
-
 
 section.checkout .container .sub-total input {
   border: none;
@@ -59,4 +58,40 @@ section.checkout .container .sub-total input {
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
   cursor: pointer;
+}
+
+/* Delivery Method Toggle */
+.delivery-method {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.method-btn {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid var(--main-color);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--main-color);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.method-btn.active {
+  background: var(--main-color);
+  color: #fff;
+}
+
+/* Pickup Notice */
+.pickup-notice {
+  background: #f0fdf4;
+  border: 1px solid #86efac;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 20px;
+  color: #166534;
+  font-size: 0.95rem;
+  text-align: center;
 }
